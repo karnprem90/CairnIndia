@@ -1,0 +1,69 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <form name="createPipeForm" class="form-horizontal ut-form form-validation">
+                <h3>Pipeline Information</h3>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">From City</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" ng-model="pipe.fromCity" ng-pattern="/^[A-z]+$/" ng-minlength="4" ng-maxlength="20" ng-click="isChanged = true" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">To City</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" ng-model="pipe.toCity" ng-minlength="1" ng-maxlength="20" ng-click="isChanged = true" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">Pipeline Name</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" ng-model="pipe.pipeName" ng-click="isChanged = true" ng-minlength="5" ng-maxlength="50" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">Length (in Kilometers)</label>
+                    <div class="col-sm-9">
+                        <input type="number" class="form-control" ng-model="pipe.length" ng-pattern="/^(?:\d*\.\d*|\d+)$/" ng-minlength="1" ng-maxlength="5" ng-click="isChanged = true" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label"> Diameter (in inches)</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" ng-model="pipe.diameter" ng-pattern="/^(?:\d*\.\d*|\d+)$/" ng-minlength="1" maxlength="10" ng-click="isChanged = true" required>
+                    </div>
+                    <!-- <div class="col-sm-3">
+                        <select class="form-control" ng-model="pipe.diameterSizeIn" ng-change="changeSize(pipe.diameterSizeIn)" ng-init="pipe.diameterSizeIn">
+                            <option value="cm">cm</option>
+                            <option value="inch" selected>inch</option>
+                        </select>
+                    </div> -->
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">Temperature (in °C)</label>
+                    <div class="col-sm-9">
+                        <input type="number" class="form-control" ng-model="pipe.temperature" ng-pattern="/^(?:\d*\.\d*|\d+)$/" ng-minlength="1" ng-click="isChanged = true" maxlength="5" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">Pressure (in psi)</label>
+                    <div class="col-sm-9">
+                        <input type="number" class="form-control" ng-model="pipe.pressure" ng-pattern="/^(?:\d*\.\d*|\d+)$/" ng-minlength="1" ng-click="isChanged = true" maxlength="5" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">Viscosity (at 65°C)</label>
+                    <div class="col-sm-9">
+                        <input type="number" class="form-control" ng-model="pipe.viscosity" ng-pattern="/^(?:\d*\.\d*|\d+)$/" ng-minlength="1" ng-click="isChanged = true" maxlength="5" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-3 col-sm-9">
+                        <button type="submit" class="btn btn-default" ng-click="savePipeData(pipe);">Save</button>
+                        <button type="submit" class="btn btn-default" ng-click="goBack(pipe)" ui-sref="oilSpillContainment">Cancel</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
