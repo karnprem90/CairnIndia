@@ -5,7 +5,7 @@ module.exports = {
             port: 8001
     },
     database: {
-        url: 'mongodb://127.0.0.1/Cairn-db'
+        url: 'mongodb://test1234:test1234@apollo.modulusmongo.net:27017/u8geWegy'
     },
     key: {
         privateKey: '37LvDSm4XvjYOh9Y',
